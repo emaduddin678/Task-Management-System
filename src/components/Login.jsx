@@ -21,14 +21,14 @@ const Login = () => {
   const notify = (a) => toast.success(` ${a} `);
 
   const onSubmit = (data) => {
-    notify("Login Succesfully!!");
     // console.log(data.email, data.password);
     // console.log(errors);
     const action = async (a, b) => {
       try {
         await login(a, b);
         await loginUser({ email: a, password: b });
-      } catch (error) {
+        notify("Login Succesfully!!");
+      } catch (error) { 
         const a = JSON.stringify(error);
         // console.log(a);
         // console.log(JSON.parse(a).code);
@@ -56,7 +56,8 @@ const Login = () => {
   const loginUser = async (userData) => {
     console.log(userData);
     // Define the API URL
-    const API_URL = "http://localhost:8800/auth/login";
+    const API_URL =
+      "https://task-management-server-ebpb.vercel.app/auth/login";
     // Send a POST request with the data
     axios
       .post(API_URL, userData, { withCredentials: true })
@@ -64,12 +65,12 @@ const Login = () => {
         console.log("User Register successful:", response.data);
         // setUserId(response.data);
 
+        notify("Register Successrul!! ");
         if (response.data.success) {
           // console.log(location.state)
           navigate(location?.state ? location?.state : "/");
         }
 
-        notify("Register Successrul!! ");
       })
       .catch((error) => {
         console.error("Error sending POST request:", error);

@@ -31,11 +31,11 @@ const Flowbite = () => {
 
   const fetchData = async () => {
     try {
-      const API_URL = `http://localhost:8800/tasks`;
+      const API_URL = `https://task-management-server-ebpb.vercel.app/tasks`;
 
       const { data } = await axios.get(API_URL, { withCredentials: true });
-      const response = await axios.get(API_URL, { withCredentials: true });
-      console.log(response);
+      // const response = await axios.get(API_URL, { withCredentials: true });
+      // console.log(response);
 
       const dataWithId = data.map((item, index) => {
         return {
@@ -54,7 +54,7 @@ const Flowbite = () => {
   console.log(data);
 
   const handleDelete = async (id) => {
-    const url = `http://localhost:8800/tasks/${id}`;
+    const url = `https://task-management-server-ebpb.vercel.app/tasks/${id}`;
     const res = await axios.delete(url);
     let timerInterval;
     Swal.fire({

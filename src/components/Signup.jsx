@@ -78,7 +78,8 @@ const Signup = () => {
   const registerUser = async (userData) => {
     console.log(userData);
     // Define the API URL
-    const API_URL = "http://localhost:8800/auth/register";
+    const API_URL =
+      "https://task-management-server-ebpb.vercel.app/auth/register";
     // Send a POST request with the data
     axios
       .post(API_URL, userData, { withCredentials: true })

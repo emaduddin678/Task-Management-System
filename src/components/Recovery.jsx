@@ -87,7 +87,7 @@ const DataGridView = () => {
 
   const fetchData = async () => {
     try {
-      const API_URL = `http://localhost:8800/tasks`;
+      const API_URL = `https://task-management-server-ebpb.vercel.app/tasks`;
 
       const { data } = await axios.get(API_URL, { withCredentials: true });
 
@@ -122,7 +122,7 @@ const DataGridView = () => {
 
   const handleDelete = async (id) => {
     console.log(id);
-    const url = `http://localhost:8800/tasks/${id}`;
+    const url = `https://task-management-server-ebpb.vercel.app/tasks/${id}`;
     const res = await axios.delete(url);
     let timerInterval;
     Swal.fire({
