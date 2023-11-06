@@ -28,7 +28,7 @@ const Login = () => {
         await login(a, b);
         await loginUser({ email: a, password: b });
         notify("Login Succesfully!!");
-      } catch (error) { 
+      } catch (error) {
         const a = JSON.stringify(error);
         // console.log(a);
         // console.log(JSON.parse(a).code);
@@ -56,8 +56,7 @@ const Login = () => {
   const loginUser = async (userData) => {
     console.log(userData);
     // Define the API URL
-    const API_URL =
-      "https://task-management-server-ebpb.vercel.app/auth/login";
+    const API_URL = "https://task-management-server-ebpb.vercel.app/auth/login";
     // Send a POST request with the data
     axios
       .post(API_URL, userData, { withCredentials: true })
@@ -70,7 +69,6 @@ const Login = () => {
           // console.log(location.state)
           navigate(location?.state ? location?.state : "/");
         }
-
       })
       .catch((error) => {
         console.error("Error sending POST request:", error);
