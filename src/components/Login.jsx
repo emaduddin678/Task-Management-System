@@ -2,7 +2,7 @@ import React from "react";
 import { Link, json, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import Navbar from "./Navbar/Navbar";
 import axios from "axios";
 
@@ -33,14 +33,15 @@ const Login = () => {
         // console.log(a);
         // console.log(JSON.parse(a).code);
         const errorMessage = JSON.parse(a).code;
-        notify("Login Fail!!");
-
+        
         if (errorMessage === "auth/wrong-password") {
+          notify("Login Fail due to wrong Password!!");
           setError("password", {
             type: "manual",
             message: errorMessage,
           });
         } else {
+          notify("User not found!!");
           setError("email", {
             type: "manual",
             message: errorMessage,
@@ -67,7 +68,7 @@ const Login = () => {
         // setUserId(response.data);
 
         if (response.data.success) {
-          notify("Register Successrul!! ");
+          notify("Server Register Successrul!! ");
           // console.log(location.state)
           navigate(location?.state ? location?.state : "/");
         }
@@ -143,6 +144,7 @@ const Login = () => {
           Submit
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };
