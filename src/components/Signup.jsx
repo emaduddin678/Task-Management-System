@@ -79,7 +79,7 @@ const Signup = () => {
     console.log(userData);
     // Define the API URL
     const API_URL =
-      "https://task-management-server-ebpb.vercel.app/auth/register";
+      "https://task-management-server-lovat-nine.vercel.app/auth/register";
     // Send a POST request with the data
     axios
       .post(API_URL, userData, { withCredentials: true })

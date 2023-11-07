@@ -55,8 +55,10 @@ const Login = () => {
 
   const loginUser = async (userData) => {
     console.log(userData);
+    
     // Define the API URL
-    const API_URL = "https://task-management-server-ebpb.vercel.app/auth/login";
+    const API_URL =
+      "https://task-management-server-lovat-nine.vercel.app/auth/login";
     // Send a POST request with the data
     axios
       .post(API_URL, userData, { withCredentials: true })
@@ -64,8 +66,8 @@ const Login = () => {
         console.log("User Register successful:", response.data);
         // setUserId(response.data);
 
-        notify("Register Successrul!! ");
         if (response.data.success) {
+          notify("Register Successrul!! ");
           // console.log(location.state)
           navigate(location?.state ? location?.state : "/");
         }

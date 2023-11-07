@@ -57,7 +57,7 @@ const columns = [
 const TaskList = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = "https://task-management-server-ebpb.vercel.app/tasks";
+  const API_URL = "https://task-management-server-lovat-nine.vercel.app/tasks";
 
   useEffect(() => {
     const fetchData = async () => {

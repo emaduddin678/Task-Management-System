@@ -31,7 +31,7 @@ const Flowbite = () => {
 
   const fetchData = async () => {
     try {
-      const API_URL = `https://task-management-server-ebpb.vercel.app/tasks`;
+      const API_URL = `https://task-management-server-lovat-nine.vercel.app/tasks`;
 
       const { data } = await axios.get(API_URL, { withCredentials: true });
       // const response = await axios.get(API_URL, { withCredentials: true });
@@ -54,7 +54,7 @@ const Flowbite = () => {
   console.log(data);
 
   const handleDelete = async (id) => {
-    const url = `https://task-management-server-ebpb.vercel.app/tasks/${id}`;
+    const url = `https://task-management-server-lovat-nine.vercel.app/tasks/${id}`;
     const res = await axios.delete(url);
     let timerInterval;
     Swal.fire({
@@ -84,7 +84,7 @@ const Flowbite = () => {
   return (
     <div>
       <Navbar />
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-20">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg  mt-28">
         <table className="w-full text-sm text-left text-blue-100 dark:text-blue-100">
           <thead className="text-xs text-white uppercase bg-blue-600 dark:text-white">
             <tr>

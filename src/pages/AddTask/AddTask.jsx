@@ -103,7 +103,7 @@ export default function AddTask() {
   const sendData = (taskData) => {
     console.log(taskData);
     // Define the API URL
-    const API_URL = "https://task-management-server-ebpb.vercel.app/task";
+    const API_URL = "https://task-management-server-lovat-nine.vercel.app/task";
     // Send a POST request with the data
     axios
       .post(API_URL, taskData, { withCredentials: true })
@@ -135,7 +135,7 @@ export default function AddTask() {
   };
   const updateData = (taskData) => {
     // Define the API URL
-    const API_URL = `https://task-management-server-ebpb.vercel.app/task/${stateData._id}`;
+    const API_URL = `https://task-management-server-lovat-nine.vercel.app/task/${stateData._id}`;
     // Send a POST request with the data
     console.log(taskData);
     axios
