@@ -3,7 +3,7 @@
 <hr/>
 
 - **Description** :
-  A dynamic newspaper portal where publications can publish their news and users can get all them in one platform. And admin dashboard can manage users and publications.
+  A dynamic office management system. Where any work can be filtered by any field name..
 
 - **💻Technologies used** :
 
